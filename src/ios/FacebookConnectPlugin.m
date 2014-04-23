@@ -21,6 +21,10 @@
 
 @implementation FacebookConnectPlugin
 
+-(CDVPlugin *)init:(UIWebView *)theWebView {
+    NSLog(@"Init yo");
+    return self;
+}
 
 -(CDVPlugin *)initWithWebView:(UIWebView *)theWebView {
     NSLog(@"Init FacebookConnect Session");
