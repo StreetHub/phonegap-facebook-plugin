@@ -37,6 +37,11 @@
     self = (FacebookConnectPlugin *)[super initWithWebView:theWebView];
     self.userid = @"";
 
+    // Initialise facebook
+    NSString* appId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"FacebookAppID"];
+    [FBSettings setDefaultAppID:appId];
+    [FBAppEvents activateApp];
+
     [FBSession openActiveSessionWithReadPermissions:nil
                                        allowLoginUI:NO
                                   completionHandler:^(FBSession *session,
